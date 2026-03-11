@@ -1,0 +1,29 @@
+service:
+  name: log-monitoring-service
+  version: legacy-0.1
+
+inputs:
+  # JSON Lines (one JSON object per line)
+  logfile_path: logs/application.log
+
+thresholds:
+  # Window used for evaluation (seconds)
+  window_seconds: 120
+  # Alert when >= this many ERROR entries occur within the window
+  error_count_threshold: 3
+  # If true: evaluate per service; if false: global
+  per_service: true
+  # If true: any CRITICAL triggers an alert immediately
+  critical_immediate: true
+  # Optional: feature extension target for Module 6
+  # dedupe_enabled: false
+
+alerting:
+  provider: "webhook"
+  fail_open: true
+  webhook_url: "https://example.invalid/webhook"  # placeholder
+  timeout_seconds: 2
+
+logging:
+  service_log_path: logs/service.log
+  level: INFO

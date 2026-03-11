@@ -1,0 +1,7 @@
+{"ts": "2026-02-16T08:59:00Z", "service": "api", "level": "INFO", "message": "startup complete"}
+{"ts": "2026-02-16T08:59:30Z", "service": "api", "level": "ERROR", "message": "db timeout"}
+{"ts": "2026-02-16T08:59:40Z", "service": "api", "level": "ERROR", "message": "db timeout"}
+{"ts": "2026-02-16T08:59:50Z", "service": "api", "level": "ERROR", "message": "db timeout"}
+{"ts": "2026-02-16T09:00:00Z", "service": "worker", "level": "WARNING", "message": "queue depth high"}
+THIS IS NOT JSON
+{"ts": "2026-02-16T09:00:05Z", "service": "api", "level": "CRITICAL", "message": "disk full"}

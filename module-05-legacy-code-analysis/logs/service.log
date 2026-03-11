@@ -1,0 +1,38 @@
+2026-01-15T10:00:00Z INFO  Service starting: log-monitoring-service (env=dev)
+2026-01-15T10:00:00Z INFO  Loading configuration from config/config.yml
+2026-01-15T10:00:00Z INFO  Threshold rule loaded: 3+ ERROR within 120s (scope=per_service)
+2026-01-15T10:00:00Z INFO  Critical immediate alert enabled: True
+2026-01-15T10:00:00Z INFO  Alert provider configured: webhook
+2026-01-15T10:00:00Z INFO  Monitoring log file: logs/application.log
+
+2026-01-15T10:00:01Z INFO  Processing started
+2026-01-15T10:00:01Z INFO  Parsed log entry: service=auth-service level=INFO
+2026-01-15T10:00:01Z INFO  Parsed log entry: service=auth-service level=ERROR
+2026-01-15T10:00:01Z WARNING Skipped malformed log entry at line 4
+2026-01-15T10:00:01Z INFO  Parsed log entry: service=payment-service level=ERROR
+2026-01-15T10:00:02Z INFO  Parsed log entry: service=payment-service level=ERROR
+2026-01-15T10:00:02Z INFO  Parsed log entry: service=payment-service level=ERROR
+
+2026-01-15T10:00:02Z INFO  Evaluating threshold for service=payment-service
+2026-01-15T10:00:02Z INFO  Threshold met: 3 errors within 120s (service=payment-service)
+2026-01-15T10:00:02Z INFO  Attempting alert dispatch via webhook
+
+2026-01-15T10:00:02Z ERROR Alert dispatch failed: Connection timeout
+2026-01-15T10:00:02Z WARNING Alert failure logged — continuing processing (fail_open=True)
+
+2026-01-15T10:00:03Z INFO  Parsed log entry: service=auth-service level=CRITICAL
+2026-01-15T10:00:03Z INFO  Immediate CRITICAL detected — triggering alert
+2026-01-15T10:00:03Z INFO  Alert successfully dispatched
+
+2026-01-15T10:00:04Z INFO  Evaluating threshold for service=auth-service
+2026-01-15T10:00:04Z INFO  Threshold not met for auth-service
+
+2026-01-15T10:00:05Z INFO  Processing complete
+2026-01-15T10:00:05Z INFO  Run summary:
+2026-01-15T10:00:05Z INFO    Total lines processed: 8
+2026-01-15T10:00:05Z INFO    Valid entries: 7
+2026-01-15T10:00:05Z INFO    Malformed entries skipped: 1
+2026-01-15T10:00:05Z INFO    Alerts triggered: 2
+2026-01-15T10:00:05Z INFO    Alert failures: 1
+
+2026-01-15T10:00:05Z INFO  Service shutting down cleanly

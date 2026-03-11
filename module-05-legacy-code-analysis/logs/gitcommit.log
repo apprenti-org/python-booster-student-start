@@ -1,0 +1,199 @@
+# Mock Git Commit History  
+_Log Monitoring Service — Legacy Review_
+
+This mock commit history is designed for Module 5: **Reading Architecture & Legacy Code**.  
+It includes strong commits, vague commits, reactive fixes, and potential regression risks.
+
+---
+
+## Commit History
+
+---
+
+### `9f3a2c1`
+**Author:** Sarah Kim  
+**Date:** 2026-01-15  
+**Message:** Add structured run summary logging (counts + alert stats)
+
+**Files Touched:**
+- `src/processor.py`
+- `docs/runbook.md`
+- `tests/test_processor.py`
+
+---
+
+### `7a82bd4`
+**Author:** Marcus Rivera  
+**Date:** 2026-01-14  
+**Message:** Introduce fail_open alert handling with logging
+
+**Files Touched:**
+- `src/alert_adapter.py`
+- `src/processor.py`
+- `config/config.yml`
+- `tests/test_alert_adapter.py`
+
+---
+
+### `4e91c8f`
+**Author:** Sarah Kim  
+**Date:** 2026-01-13  
+**Message:** Fix threshold window boundary bug (inclusive edge case)
+
+**Files Touched:**
+- `src/threshold.py`
+- `tests/test_threshold.py`
+
+---
+
+### `c12fa88`
+**Author:** Daniel Brooks  
+**Date:** 2026-01-12  
+**Message:** Change threshold scope from global to per_service
+
+**Files Touched:**
+- `src/threshold.py`
+- `config/config.yml`
+- `docs/runbook.md`
+- `tests/test_threshold.py`
+
+---
+
+### `b6d3302`
+**Author:** Daniel Brooks  
+**Date:** 2026-01-11  
+**Message:** Add CRITICAL immediate alert trigger
+
+**Files Touched:**
+- `src/threshold.py`
+- `config/config.yml`
+- `tests/test_threshold.py`
+
+---
+
+### `3aa45f0`
+**Author:** Marcus Rivera  
+**Date:** 2026-01-10  
+**Message:** Refactor threshold evaluation logic
+
+**Files Touched:**
+- `src/threshold.py`
+
+---
+
+### `f98e2c1`
+**Author:** Priya Shah  
+**Date:** 2026-01-09  
+**Message:** Skip malformed JSON lines instead of crashing
+
+**Files Touched:**
+- `src/parser.py`
+- `src/processor.py`
+- `tests/test_parser.py`
+- `docs/runbook.md`
+
+---
+
+### `e22ac77`
+**Author:** Marcus Rivera  
+**Date:** 2026-01-09  
+**Message:** updates
+
+**Files Touched:**
+- `src/processor.py`
+- `src/threshold.py`
+
+---
+
+### `2de99a4`
+**Author:** Priya Shah  
+**Date:** 2026-01-08  
+**Message:** Add config validation at startup
+
+**Files Touched:**
+- `src/processor.py`
+- `config/config.yml`
+- `tests/test_config_validation.py`
+
+---
+
+### `0ab771e`
+**Author:** Sarah Kim  
+**Date:** 2026-01-07  
+**Message:** Improve log visibility for threshold evaluation
+
+**Files Touched:**
+- `src/processor.py`
+- `docs/runbook.md`
+
+---
+
+### `d10e221`
+**Author:** Daniel Brooks  
+**Date:** 2026-01-06  
+**Message:** Add webhook alert adapter
+
+**Files Touched:**
+- `src/alert_adapter.py`
+- `config/config.yml`
+- `tests/test_alert_adapter.py`
+
+---
+
+### `c881ab9`
+**Author:** Marcus Rivera  
+**Date:** 2026-01-05  
+**Message:** fix stuff
+
+**Files Touched:**
+- `src/parser.py`
+- `src/threshold.py`
+- `src/processor.py`
+
+---
+
+### `aa91bb2`
+**Author:** Priya Shah  
+**Date:** 2026-01-04  
+**Message:** Initial threshold evaluation implementation
+
+**Files Touched:**
+- `src/threshold.py`
+- `tests/test_threshold.py`
+
+---
+
+### `3c45d9a`
+**Author:** Priya Shah  
+**Date:** 2026-01-03  
+**Message:** Basic log parsing implementation
+
+**Files Touched:**
+- `src/parser.py`
+- `tests/test_parser.py`
+
+---
+
+### `dfe22aa`
+**Author:** Marcus Rivera  
+**Date:** 2026-01-02  
+**Message:** more changes
+
+**Files Touched:**
+- `src/parser.py`
+- `config/config.yml` 
+
+---
+
+### `1b773ff`
+**Author:** Daniel Brooks  
+**Date:** 2026-01-01  
+**Message:** Initial project scaffolding
+
+**Files Touched:**
+- `src/parser.py`
+- `src/threshold.py`
+- `src/processor.py`
+- `src/alert_adapter.py`
+- `config/config.yml`
+- `docs/runbook.md`

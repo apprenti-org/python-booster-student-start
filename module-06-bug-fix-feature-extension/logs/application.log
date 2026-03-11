@@ -1,0 +1,8 @@
+{"timestamp": "2026-01-15T14:00:00Z", "service": "auth-api", "level": "INFO", "message": "startup complete", "event_id": "e-0001"}
+{"timestamp": "2026-01-15T14:00:10Z", "service": "auth-api", "level": "ERROR", "message": "failed login attempt", "event_id": "e-0002"}
+{"timestamp": "2026-01-15T14:01:00Z", "service": "auth-api", "level": "ERROR", "message": "db timeout", "event_id": "e-0003"}
+{"timestamp": "2026-01-15T14:02:00Z", "service": "auth-api", "level": "ERROR", "message": "cache miss storm", "event_id": "e-0004"}
+{"timestamp": "2026-01-15T14:02:05Z", "service": "billing", "level": "WARNING", "message": "retrying webhook", "event_id": "e-0005"}
+{"timestamp": "not-closed-json"
+{"timestamp": "2026-01-15T14:02:10Z", "service": "billing", "level": "CRITICAL", "message": "payment processor unavailable", "event_id": "e-0006"}
+{"timestamp": "2026-01-15T14:02:15Z", "service": "auth-api", "level": "INFO", "message": "healthcheck ok", "event_id": "e-0007"}

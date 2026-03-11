@@ -1,0 +1,96 @@
+# config/config.yml
+# Log Monitoring Service configuration (training project)
+
+service:
+  name: log-monitoring-service
+  environment: dev
+
+input:
+  # Path to the log file to process
+  log_file: logs/application.log
+
+  # Expected input format. Use "json" if each line is a JSON object.
+  # Other formats can be added later, but this training version assumes JSON-per-line.
+  format: json
+
+  # If true, malformed lines are skipped and logged (recommended).
+  # If false, the service halts on the first malformed entry.
+  skip_malformed: true
+
+schema:
+  # Required fields expected in each log entry
+  required_fields:
+    - timestamp
+    - service
+    - level
+    - message
+
+  # Optional fields that may appear (not required)
+  optional_fields:
+    - request_id
+    - user_id
+    - hostname
+    - environment
+    - tags
+
+levels:
+  # Which log levels count toward thresholds
+  count_as_error:
+    - ERROR
+    - CRITICAL
+
+  # If true, unknown log levels are treated as non-errors but still logged as warnings.
+  allow_unknown_levels: true
+
+thresholds:
+  # Primary rule: alert when N or more error-level entries occur in a time window.
+  rule:
+    type: count_in_window
+    count: 3
+    window_seconds: 120
+
+    # Scope defines whether the rule applies globally or per service name in the log entry.
+    scope: per_service  # options: global, per_service
+
+  # Secondary rule: CRITICAL entries can trigger immediate alerts regardless of count.
+  critical_triggers_immediate_alert: true
+
+  # Cooldown prevents repeated alerts from firing continuously.
+  cooldown_seconds: 300
+
+alerting:
+  # Master switch for alerting (useful for local runs or tests).
+  enabled: true
+
+  # Alert provider type for the adapter layer (training-friendly values).
+  provider: webhook  # options: webhook, email, sms (implementation-dependent)
+
+  # Where alerts would be sent (webhook URL, email address, etc.)
+  # In training, this can be a placeholder. Do not hardcode real credentials.
+  destination: "https://example.com/webhook"
+
+  # If true, alert failures should not crash processing. Failures are logged and processing continues.
+  fail_open: true
+
+logging:
+  # Where the service writes its own logs/audit events.
+  output: stdout  # options: stdout, file
+
+  # If output is "file", write here:
+  file_path: logs/service.log
+
+  # Logging level for the service itself
+  level: INFO  # options: DEBUG, INFO, WARNING, ERROR
+
+  # If true, write structured JSON logs for audit events.
+  structured: true
+
+  # Include a run summary at the end (counts + outcomes)
+  write_run_summary: true
+
+safety:
+  # If true, missing or invalid config should halt safely with a clear error.
+  halt_on_invalid_config: true
+
+  # Maximum lines to process in a single run (prevents runaway processing in training).
+  max_lines: 50000

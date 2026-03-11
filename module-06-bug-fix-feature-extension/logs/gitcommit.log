@@ -1,0 +1,43 @@
+commit 9f3a2c1
+Author: Sarah Kim
+Date: 2026-01-15
+Message: Add structured run summary logging (counts + alert stats)
+Files:
+  src/processor.py
+  docs/runbook.md
+  tests/test_processor.py
+
+commit 7a82bd4
+Author: Marcus Rivera
+Date: 2026-01-14
+Message: Introduce fail_open alert handling with logging
+Files:
+  src/alert_adapter.py
+  src/processor.py
+  config/config.yml
+  tests/test_alert_adapter.py
+
+commit 4e91c8f
+Author: Sarah Kim
+Date: 2026-01-13
+Message: Fix threshold window boundary bug (inclusive edge case)
+Files:
+  src/threshold.py
+  tests/test_threshold.py
+
+commit e22ac77
+Author: Marcus Rivera
+Date: 2026-01-09
+Message: updates
+Files:
+  src/processor.py
+  src/threshold.py
+
+commit c881ab9
+Author: Marcus Rivera
+Date: 2026-01-05
+Message: fix stuff
+Files:
+  src/parser.py
+  src/threshold.py
+  src/processor.py
